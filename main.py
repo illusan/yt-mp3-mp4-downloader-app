@@ -13,21 +13,22 @@ text.pack(pady=(30, 0))
 text2 = ctk.CTkLabel(app, text="free mp3 and mp4 format converter, compatibile with YouTube", font=("Arial", 17))
 text2.pack(pady=(5, 0))
 
-entry = ctk.CTkEntry(app, width=500, placeholder_text="URL")
-entry.pack(pady=(30, 0))
-
-
-combo = ctk.CTkComboBox(app, values=["MP3", "MP4"], width=70)
-combo.pack()
-combo.set("MP3")
-
-button = ctk.CTkButton(app, text="Download")
-button.pack()
-
-text3 = ctk.CTkLabel(app, text="Enter the video URL", font=("Arial", 12))
-text3.pack(pady=(5, 0))
 
 frame = ctk.CTkFrame(app, bg_color="transparent")
+frame.pack(pady=10)
+
+entry = ctk.CTkEntry(frame, width=500, placeholder_text="enter video URL")
+entry.grid(row=0, column=0, padx=10, pady=10)
+
+combo = ctk.CTkComboBox(frame, values=["MP3", "MP4"], width=70)
+combo.grid(row=0, column=1, padx=10, pady=10)
+combo.set("MP3")
+
+button = ctk.CTkButton(frame, text="Download")
+button.grid(row=1, column=0, columnspan=2, pady=20)
+
+
+
 
 
 
